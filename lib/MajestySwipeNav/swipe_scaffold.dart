@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:subtlenavbar/SwipeNav/swipenav_controller.dart';
-
-class SwipeScaffold extends StatelessWidget {
+import 'package:subtlenavbar/MajestySwipeNav/swipenav_controller.dart'; 
+class MajestySwipeScaffold extends StatelessWidget {
   final Widget child;
-  SwipeScaffold({this.child});
+  MajestySwipeScaffold({this.child});
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:subtlenavbar/SwipeNav/swipenav_controller.dart';
+import 'package:subtlenavbar/MajestySwipeNav/swipenav_controller.dart';
 
-class SwipeNavigationBar extends StatefulWidget {
+class MajestySwipeNavigationBar extends StatefulWidget {
   final Color backgroundColor;
   final Color selectorColor;
   final Color selectedItemColor;
@@ -17,7 +17,7 @@ class SwipeNavigationBar extends StatefulWidget {
   final TextStyle captionsTextStyle;
   final double swipedHeight;
   final ValueChanged<int> onItemPressed;
-  SwipeNavigationBar({
+  MajestySwipeNavigationBar({
     @required this.items,
     @required this.captions,
     @required this.onItemPressed,
@@ -34,10 +34,11 @@ class SwipeNavigationBar extends StatefulWidget {
         assert(items.length >= 2);
 
   @override
-  _SwipeNavigationBarState createState() => _SwipeNavigationBarState();
+  _MajestySwipeNavigationBarState createState() =>
+      _MajestySwipeNavigationBarState();
 }
 
-class _SwipeNavigationBarState extends State<SwipeNavigationBar> {
+class _MajestySwipeNavigationBarState extends State<MajestySwipeNavigationBar> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {

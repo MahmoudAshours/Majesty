@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:subtlenavbar/SwipeNav/swipe_nav.dart';
-
-import 'SwipeNav/swipe_scaffold.dart';
+import 'package:subtlenavbar/MajestySwipeNav/swipe_nav.dart';
+import 'package:subtlenavbar/MajestySwipeNav/swipe_scaffold.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,11 +25,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       color: Colors.red,
-      home: SwipeScaffold(
+      home: MajestySwipeScaffold(
         child: Scaffold(
           backgroundColor: Colors.black12,
           body: Center(child: widgets[current]),
-          bottomNavigationBar: SwipeNavigationBar(
+          bottomNavigationBar: MajestySwipeNavigationBar(
               captions: ['Home', 'Search', 'Profile'],
               backgroundColor: Colors.white,
               swipedHeight: 160,
