@@ -1,6 +1,6 @@
-# subtlenavbar
+# Majesty
 
-A new Flutter project.
+A Flutter package for customizing bottom navigation bar.
 
 ## Getting Started
 
