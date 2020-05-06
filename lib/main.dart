@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:subtlenavbar/MajestyCasinoNavigationBar/casino_navbar.dart';
+import 'package:subtlenavbar/MajestySubtleNav/subtle_bottomnavbar.dart';
 import 'package:subtlenavbar/MajestySwipeNav/swipe_nav.dart';
 import 'package:subtlenavbar/MajestySwipeNav/swipe_scaffold.dart';
 
@@ -24,24 +26,17 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       color: Colors.red,
-      home: MajestySwipeScaffold(
-        child: Scaffold(
-          backgroundColor: Colors.black12,
-          body: Center(child: widgets[current]),
-          bottomNavigationBar: MajestySwipeNavigationBar(
-              captions: ['Home', 'Search', 'Profile'],
-              backgroundColor: Colors.white,
-              swipedHeight: 160,
-              selectedItemColor: Colors.blue,
-              captionsTextStyle:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
-              items: <Widget>[
-                Icon(Icons.home),
-                Icon(Icons.search),
-                Icon(Icons.supervised_user_circle)
-              ],
-              onItemPressed: (int i) => setState(() => current = i)),
+      home: Scaffold(
+        backgroundColor: Colors.black12,
+        body: Center(child: widgets[current]),
+        bottomNavigationBar: MajestyCasinoNavigationBar(
+          items: null,
+          captions: null,
+          currentIndex: 0,
+          onItemPressed: null,
+          captionsTextStyles: null,
         ),
       ),
     );

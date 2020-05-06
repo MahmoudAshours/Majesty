@@ -10,9 +10,6 @@ class MajestySwipeNavigationBar extends StatefulWidget {
   final Curve animationCurve;
   final Duration animationDuration;
   final List<Widget> items;
-  // get getcurrentPostion => currentPosition;
-  // set setcurrentPosition(int position) => currentPosition = position;
-  // int currentPosition;
   final List<String> captions;
   final TextStyle captionsTextStyle;
   final double swipedHeight;
@@ -25,7 +22,6 @@ class MajestySwipeNavigationBar extends StatefulWidget {
     this.captionsTextStyle = const TextStyle(color: Colors.white),
     this.backgroundColor = const Color(0xff422FBC),
     this.selectorColor = const Color(0xFFFFFFFF),
-    // this.currentPosition,
     this.nonSelectedIconColor,
     this.selectedItemColor,
     this.animationCurve = Curves.easeInSine,
@@ -82,7 +78,8 @@ class _MajestySwipeNavigationBarState extends State<MajestySwipeNavigationBar> {
                               ),
                             ),
                             Positioned(
-                              bottom: 50,
+                              bottom: (MediaQuery.of(context).size.width -
+                                  widget.swipedHeight??50) / 2.5,
                               child: RotatedBox(
                                 quarterTurns: -45,
                                 child: Text(

@@ -11,7 +11,7 @@ class MajestySubtleBottomNavBar extends StatefulWidget {
   final List<GlobalKey> keys = List();
   final List<Widget> items;
   final List<String> captions;
-  final List<TextStyle> captionsTextStyles;
+  final TextStyle captionsTextStyles;
   final ValueChanged<int> onItemPressed;
   MajestySubtleBottomNavBar({
     @required this.items,
@@ -25,8 +25,7 @@ class MajestySubtleBottomNavBar extends StatefulWidget {
     this.animationCurve = Curves.easeInSine,
     this.animationDuration = const Duration(milliseconds: 500),
   })  : assert(items.length == captions.length),
-        assert(items.length >= 2),
-        assert(captions.length == captionsTextStyles.length) {
+        assert(items.length >= 2) {
     for (int i = 0; i < items.length; i++) {
       keys.add(GlobalKey());
     }
@@ -73,6 +72,7 @@ class _MajestySubtleBottomNavBarState extends State<MajestySubtleBottomNavBar>
             child: Opacity(
               opacity: 0.2,
               child: Container(
+                padding: EdgeInsets.all(40),
                 decoration: BoxDecoration(
                   color: widget.selectorColor,
                   borderRadius: BorderRadius.circular(20),
@@ -97,10 +97,9 @@ class _MajestySubtleBottomNavBarState extends State<MajestySubtleBottomNavBar>
                             RenderBox box = widget.keys[index].currentContext
                                 .findRenderObject();
                             Offset position = box.localToGlobal(Offset.zero);
-
                             setState(
                               () {
-                                _position = position.dx;
+                                _position = position.dx - 5;
                                 _opacity = 1;
                                 _padding = 15;
                                 _currentIndex = index;
@@ -138,7 +137,7 @@ class _MajestySubtleBottomNavBarState extends State<MajestySubtleBottomNavBar>
                                       ),
                                       child: Text(
                                         widget.captions[index],
-                                        style: widget.captionsTextStyles[index],
+                                        style: widget.captionsTextStyles,
                                       ),
                                     ),
                                   ),

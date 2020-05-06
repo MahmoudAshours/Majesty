@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:subtlenavbar/MajestySwipeNav/swipenav_controller.dart'; 
+import 'package:subtlenavbar/MajestySwipeNav/swipenav_controller.dart';
+
 class MajestySwipeScaffold extends StatelessWidget {
   final Widget child;
-  MajestySwipeScaffold({this.child});
+  MajestySwipeScaffold({@required this.child}) : assert(child != null);
 
   @override
   Widget build(BuildContext context) {
